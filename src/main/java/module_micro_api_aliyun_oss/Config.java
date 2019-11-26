@@ -39,19 +39,19 @@ public class Config {
 		config.setAccessId(accessId);
 
 		String accessKey = context.getProperty(property_key_access_key);
-		log.info("BundleContext Property {} = {}", property_key_access_key, accessId);
+		log.info("BundleContext Property {} = {}", property_key_access_key, accessKey);
 		config.setAccessKey(accessKey);
 
 		String endpoint = context.getProperty(property_key_endpoint);
-		log.info("BundleContext Property {} = {}", property_key_endpoint, accessId);
+		log.info("BundleContext Property {} = {}", property_key_endpoint, endpoint);
 		config.setEndpoint(endpoint);
 
 		String bucket = context.getProperty(property_key_bucket);
-		log.info("BundleContext Property {} = {}", property_key_bucket, accessId);
+		log.info("BundleContext Property {} = {}", property_key_bucket, bucket);
 		config.setBucket(bucket);
 
 		String dir = context.getProperty(property_key_dir);
-		log.info("BundleContext Property {} = {}", property_key_dir, accessId);
+		log.info("BundleContext Property {} = {}", property_key_dir, dir);
 		config.setDir(dir);
 
 		return config;

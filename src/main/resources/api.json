@@ -1,0 +1,65 @@
+{
+	"apiDefinitions": [
+		{
+			"comment": "获取oss文件的（预签名）下载地址",
+			"name": "createPresignedUrl",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "oss文件名",
+						"example": "lesson/亲亲太阳作业.sb3",
+						"ext": {
+							"verify": "notBlank"
+						},
+						"javaType": "String",
+						"name": "objectName",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "（预签名）下载地址",
+						"example": "",
+						"ext": {
+							"verify": "notBlank"
+						},
+						"javaType": "String",
+						"name": "presignedUrl",
+						"required": true
+					}
+				]
+			}
+		}
+	],
+	"comment": "阿里云oss",
+	"changeLogs": [
+		{
+			"version": "v1.0.0",
+			"items": [
+				"初版"
+			]
+		}
+	],
+	"description": "这是一个简单的 阿里云oss 模块",
+	"errorCodeDefinitions": [
+		{
+			"message": "状态异常",
+			"code": "invalid_status"
+		}
+	],
+	"mixinDefinitions": [],
+	"modelDefinitions": [],
+	"serverAddressDefinition": {
+		"host": "127.0.0.1",
+		"port": 8002,
+		"url": "/api"
+	},
+	"showdocDefinition": {
+		"apiKey": "",
+		"apiToken": "",
+		"url": "http://www.showdoc.cc/server/api/item/updateByApi"
+	},
+	"version": "v1.0.0"
+}

@@ -2,7 +2,7 @@
 	"apiDefinitions": [
 		{
 			"comment": "获取oss文件的（预签名）下载地址",
-			"name": "createPresignedUrl",
+			"name": "AliyunOss_CreatePresignedUrl",
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{

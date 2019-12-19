@@ -12,17 +12,12 @@ import com.github.microprograms.micro_api_runtime.model.Api;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
 import module_micro_api_aliyun_oss.Config;
+import module_micro_api_aliyun_oss.utils.R;
 import java.util.List;
 
-@MicroApi(name = "createPresignedUrl", version = "v1.0.0")
+@MicroApi(name = "AliyunOss_CreatePresignedUrl", version = "v1.0.0")
 @Comment("获取oss文件的（预签名）下载地址")
-public class CreatePresignedUrl implements Api {
-
-    private Config config;
-
-    public CreatePresignedUrl(Config config) {
-        this.config = config;
-    }
+public class AliyunOss_CreatePresignedUrl implements Api {
 
     @Override
     public String execute(String request) throws Exception {
@@ -30,6 +25,7 @@ public class CreatePresignedUrl implements Api {
         Resp resp = new Resp();
         OSS ossClient = null;
         try {
+            Config config = R.getConfig();
             ossClient = new OSSClientBuilder().build(config.getEndpoint(), config.getAccessId(), config.getAccessKey());
             Date expiration = new Date(new Date().getTime() + 3600 * 1000);
             URL url = ossClient.generatePresignedUrl(config.getBucket(), req.getObjectName(), expiration);

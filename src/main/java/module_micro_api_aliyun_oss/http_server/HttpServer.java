@@ -11,18 +11,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import module_micro_api_aliyun_oss.Config;
+import module_micro_api_aliyun_oss.utils.R;
 
 public class HttpServer {
 	private static final Logger log = LoggerFactory.getLogger(HttpServer.class);
 
 	private Server server;
-	private Config config;
-
-	public HttpServer(Config config) {
-		this.config = config;
-	}
 
 	public synchronized void start() throws Exception {
+		Config config = R.getConfig();
 		server = new Server(Integer.valueOf(config.getPort()));
 		ServletContextHandler webApiContext = new ServletContextHandler();
 		webApiContext.setContextPath("/");
